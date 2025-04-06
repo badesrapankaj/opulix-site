@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Opulix™ - Multiply Growth | Financial Consulting Services</title>
+    <title class="title-logo">Opulix™ - Multiply Growth</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <style>
@@ -19,35 +19,81 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             overflow-x: hidden;
         }
-        /*
-        .navbar {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            padding: 15px 0;
-        }
+
         
-        .navbar-brand img {
-            height: 40px;
-        }
-        */
-        /* Add this to your CSS section */
+        /*
         .navbar-brand {
-            padding: 5px 0; /* Adjust vertical padding if needed */
+            padding: 5px 0; 
             display: flex;
             align-items: center;
         }
 
         .navbar {
-            min-height: 80px; /* Ensure navbar can accommodate larger logo */
+            min-height: 80px; 
+        }
+   
+        .navbar {
+            background-color: #ffffff; 
+            transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
         }
 
-        /* For mobile view */
+        .navbar.scroll-up {
+            transform: translateY(0);
+            background-color: #ffffff; 
+        }
+
+        .navbar.scroll-down {
+            transform: translateY(-100%);
+        }
+
+        .navbar.top {
+            transform: translateY(0);
+        }
+
         @media (max-width: 992px) {
             .navbar-brand img {
-                max-height: 50px !important; /* Slightly smaller on mobile */
+                max-height: 50px !important; 
             }
             .navbar {
                 min-height: 70px;
+            }
+        } */
+        /* Add logo to title (works in some browsers) */
+        .title-logo::before {
+            content: url('/images/favicon.ico');
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+        /* Replace your existing navbar styles with these */
+        .navbar {
+            background-color: #ffffff;
+            transition: transform 0.4s ease, background-color 0.3s ease;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .navbar.scroll-up {
+            transform: translateY(0);
+            background-color: #ffffff !important;
+        }
+
+        .navbar.scroll-down {
+            transform: translateY(-100%);
+        }
+
+        body {
+            padding-top: 80px;
+        }
+
+        @media (max-width: 992px) {
+            body {
+                padding-top: 70px;
             }
         }
 
@@ -133,7 +179,16 @@
             bottom: -10px;
             left: 25%;
         }
-        
+    
+        section {
+            scroll-margin-top: 80px; 
+        }
+
+        @media (max-width: 992px) {
+            section {
+                scroll-margin-top: 70px;
+            }
+        }
         .feature-card {
             background-color: white;
             border-radius: 10px;
@@ -326,7 +381,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#" style="height: 80px;">
+            <a class="navbar-brand" href="#" style="height: 60px;">
                 <img src="Images/Logo.jpg" alt="Opulix Logo" style="height: 100%; width: auto; max-height: 60px; object-fit: contain;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -443,7 +498,7 @@
     <section id="services" class="py-5 bg-light">
         <div class="container">
             <h2 class="text-center section-title">Our Services</h2>
-            <p class="text-center mb-5 lead">Expert solutions to manage finance for businesses to focus on core needs.</p>
+            <p class="text-center mb-5 lead fw-bold">Expert solutions to manage finance for businesses to focus on core needs.</p>
             
             <div class="row g-4"> <!-- Added gutter spacing -->
                 <!-- Consulting -->
@@ -527,7 +582,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class="section-title">About Opulix</h2>
-                    <p class="lead">We're a bunch of finance professionals who are passionate about helping businesses thrive.</p>
+                    <p class="lead fw-bold">We're a bunch of finance professionals who are passionate about helping businesses thrive.</p>
                     <p>At Opulix, we provide accurate, reliable, and personalized financial services so you can focus on what you do best – growing your business. We handle the numbers; you reap the rewards.</p>
                     <p>Each consultant at Opulix has more than a decade's experience of handling the different needs of businesses across the globe in all sectors.</p>
                     <div class="row mt-4">
@@ -549,7 +604,7 @@
                                 </div>
                                 <div>
                                     <h5 class="mb-0">Expert Team</h5>
-                                    <p class="mb-0">10+ years experience</p>
+                                    <p class="mb-0">20+ years experience</p>
                                 </div>
                             </div>
                         </div>
@@ -675,10 +730,13 @@
                     <h3>Follow Us</h3>
                     <div class="mb-4">
                         <a href="https://www.linkedin.com/company/105965966/admin/dashboard/" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
                         <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+
+                        <!--
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        -->
                     </div>
                     <h3>Visit Us</h3>
                     <p><i class="fas fa-globe contact-icon"></i> <a href="https://www.opulix.in" target="_blank">www.opulix.in</a></p>
@@ -704,7 +762,7 @@
                                 <option>Funding</option>
                                 <option>GCC Setup</option>
                                 <option>Real Estate</option>
-                                <option>Other</option>
+                                <option>Others</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -799,6 +857,59 @@
                 navbar.style.padding = '15px 0';
                 navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
             }
+        });
+    </script>
+    <script>
+            document.addEventListener('DOMContentLoaded', function() {
+            // Initialize carousel
+            var heroCarousel = new bootstrap.Carousel(document.getElementById('heroCarousel'), {
+                interval: 5000,
+                ride: 'carousel'
+            });
+            
+            // Smooth scrolling with offset for navbar
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Enhanced scroll behavior for navbar
+            const navbar = document.querySelector('.navbar');
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', function() {
+                const currentScroll = window.pageYOffset;
+                
+                // At top of page - always show
+                if (currentScroll <= 10) {
+                    navbar.classList.remove('scroll-down', 'scroll-up');
+                    navbar.style.backgroundColor = '#ffffff';
+                    return;
+                }
+                
+                // Scrolling down - hide
+                if (currentScroll > lastScroll && !navbar.classList.contains('scroll-down')) {
+                    navbar.classList.remove('scroll-up');
+                    navbar.classList.add('scroll-down');
+                } 
+                // Scrolling up - show with solid color
+                else if (currentScroll < lastScroll && (navbar.classList.contains('scroll-down') || currentScroll < 100)) {
+                    navbar.classList.remove('scroll-down');
+                    navbar.classList.add('scroll-up');
+                    navbar.style.backgroundColor = '#ffffff';
+                }
+                
+                lastScroll = currentScroll;
+            });
         });
     </script>
 </body>
